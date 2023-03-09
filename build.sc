@@ -287,6 +287,8 @@ object hardfloatRocket extends hardfloat.build.hardfloat {
     rocketchip.scalaVersion()
   }
 
+  def chisel3Module = Some(mychisel3)
+  
   // use same chisel version with RocketChip
   def chisel3IvyDeps = if(chisel3Module.isEmpty) Agg(
     common.getVersion("chisel3")
