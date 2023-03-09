@@ -7,3 +7,6 @@
 [submodule "cde"]
 	path = cde
 	url = https://github.com/chipsalliance/cde.git
+[submodule "chisel-circt-binder"]
+	path = chisel-circt-binder
+	url = git@github.com:sequencer/chisel-circt-binder.git
