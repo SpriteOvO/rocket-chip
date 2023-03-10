@@ -316,6 +316,8 @@ object rocketchip extends common.CommonRocketChip {
   def hardfloatModule = hardfloatRocket
 
   def cdeModule = cdeRocket
+
+  override def moduleDeps = super.moduleDeps() ++ Seq(bench_circt)
 }
 
 def envByNameOrRiscv(name: String): String = {
@@ -351,8 +353,6 @@ object emulator extends mill.Cross[Emulator](
 )
 class Emulator(top: String, config: String) extends Module {
   object generator extends Module {
-    def moduleDeps = Seq(bench_circt)
-
     def elaborate = T {
       os.proc(
         mill.modules.Jvm.javaExe,
